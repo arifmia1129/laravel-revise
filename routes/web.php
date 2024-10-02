@@ -39,6 +39,17 @@ Route::middleware(['auth', 'admin_auth'])->group(function () {
 });
 
 
+Route::prefix('admin')->group(function () {
+    Route::get('profile', function () {
+        return 'Admin profile page here.';
+    });
+
+    Route::get('payment', function () {
+        return 'Admin payment page here.';
+    } );
+});
+
+
 Route::fallback(function() {
     return view('not_found');
 });
