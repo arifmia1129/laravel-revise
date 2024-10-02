@@ -28,6 +28,16 @@ Route::get('/teacher', function () {
     return view('teacher');
 })->name('teacher');
 
+Route::middleware(['auth', 'admin_auth'])->group(function () {
+    Route::get('/profile', function () {
+        return 'Profile page';
+    });
+
+    Route::get('dashboard', function () {
+        return 'Dashboard page';
+    });
+});
+
 
 Route::fallback(function() {
     return view('not_found');
