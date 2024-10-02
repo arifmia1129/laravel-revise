@@ -27,3 +27,8 @@ Route::get('/student', function() {
 Route::get('/teacher', function () {
     return view('teacher');
 })->name('teacher');
+
+
+Route::fallback(function() {
+    return view('not_found');
+});
