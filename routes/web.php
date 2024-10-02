@@ -17,3 +17,13 @@ Route::get('/contact', function () {
 Route::get('/institute-info/{institute_name}/{institute_address}', function ($institute_name, $institute_address) {
     return view('info', compact('institute_name', 'institute_address'));
 });
+
+
+Route::get('/student', function() {
+    return view('student');
+})->name('student');
+
+
+Route::get('/teacher', function () {
+    return view('teacher');
+})->name('teacher');
