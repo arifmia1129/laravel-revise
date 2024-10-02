@@ -7,9 +7,9 @@
 </head>
 <body>
     <ul>
-        <li>Name: Arif</li>
-        <li>Designation: Software Developer</li>
-        <li>Address: Dhaka, Bangladesh</li>
+        <li>Name: {{$name}}</li>
+        <li>Email: {{$email}}</li>
+    
     </ul>
 </body>
 </html>
