@@ -82,3 +82,13 @@ Route::resource('articles', 'ArticleController');
 // Route::put('articles/{article}', [ArticleController.class, 'update'])->name('articles.update');
 // Route::patch('articles/{article}', [ArticleController.class, 'update']);
 // Route::delete('articles/{article}', [ArticleController.class, 'destroy'])->name('articles.destroy');
+
+
+Route::get('posts/{id}', function () {
+    return 'This is post page';
+})->where('id', '[0-9]+');
+
+
+Route::get('posts/slug/{slug}', function () {
+    return 'This is post page with slug';
+})->where('slug', '[A-Za-z0-9]+');
