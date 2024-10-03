@@ -53,3 +53,18 @@ Route::prefix('admin')->group(function () {
 Route::fallback(function() {
     return view('not_found');
 });
+
+
+// Route::get('welcome', function () {
+//     return redirect('getting');
+// });
+Route::get('welcome', function () {
+    return 'Welcome to VTTI';
+});
+
+Route::get('getting', function () {
+    return 'Hi, welcome';
+});
+
+// Route::redirect('welcome', 'getting', 301);
+Route::permanentRedirect('welcome', 'getting');
