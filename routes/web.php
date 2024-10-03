@@ -68,3 +68,6 @@ Route::get('getting', function () {
 
 // Route::redirect('welcome', 'getting', 301);
 Route::permanentRedirect('welcome', 'getting');
+
+
+Route::view('institute', 'vtti', ['institute_name' => 'VTTI']);

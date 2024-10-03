@@ -1,0 +1,1 @@
+<h1>Welcome to {{ $institute_name }}</h1>
