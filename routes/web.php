@@ -92,3 +92,8 @@ Route::get('posts/{id}', function () {
 Route::get('posts/slug/{slug}', function () {
     return 'This is post page with slug';
 })->where('slug', '[A-Za-z0-9]+');
+
+
+Route::get('student/{id}', function () {
+    return 'This is student page';
+})->name('student');
