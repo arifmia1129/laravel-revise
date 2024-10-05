@@ -20,6 +20,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        View::share(['address' => 'Dhaka, Bangladesh', 'phone' => '01812345678']);
+        // View::share(['address' => 'Dhaka, Bangladesh', 'phone' => '01812345678']);
+
+        View::composer(['admin.index', 'getting-data'], function ($view){
+            $view->with(['address' => 'Dhaka, Bangladesh', 'phone' => '01812345678']);
+        });
     }
 }
