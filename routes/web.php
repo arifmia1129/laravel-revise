@@ -106,3 +106,15 @@ Route::get('admin', function () {
 Route::get('admin/manage-user', function () {
     return view('admin.manage-user.index');
 });
+
+
+Route::get('getting-data', function () {
+    // return view('getting-data', ['name'=> 'Md. Arif', 'age'=>23]);
+    // return view('getting-data')->with('name', 'Md. Arif')->with('age', 23);
+    // return view('getting-data')->with(['name'=>'Md. Arif', 'age'=>23]);
+
+    $name = 'Md. Arif';
+    $age = 23;
+
+    return view('getting-data', compact(['name', 'age']));
+});
