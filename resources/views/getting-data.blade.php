@@ -2,3 +2,5 @@
 
 <p>Name: {{$name}}</p>
 <p>Age: {{$age}}</p>
+<p>Address: {{$address}}</p>
+<p>Phone: {{$phone}}</p>
