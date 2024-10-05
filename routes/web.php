@@ -97,3 +97,12 @@ Route::get('posts/slug/{slug}', function () {
 Route::get('student/{id}', function () {
     return 'This is student page';
 })->name('student');
+
+
+Route::get('admin', function () {
+    return view('admin.index');
+});
+
+Route::get('admin/manage-user', function () {
+    return view('admin.manage-user.index');
+});
