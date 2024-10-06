@@ -139,3 +139,7 @@ Route::get('result/{marks}', function ($marks){
 
     return view('print_result', compact('marks'));
 });
+
+Route::get('passport-status/{status}', function ($status){
+    return view('passport_status', compact('status'));
+});
