@@ -118,3 +118,15 @@ Route::get('getting-data', function () {
 
     return view('getting-data', compact(['name', 'age']));
 });
+
+
+Route::get('products', function () {
+
+    $products = [
+        'p1' => 'Product 1',
+        'p2' => 'Product 2',
+        'p3' => 'Product 3',
+    ];
+
+    return view('products', compact($products))->catch(10);
+});
