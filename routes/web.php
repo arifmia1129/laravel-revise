@@ -143,3 +143,8 @@ Route::get('result/{marks}', function ($marks){
 Route::get('passport-status/{status}', function ($status){
     return view('passport_status', compact('status'));
 });
+
+
+Route::get('raw-php', function () {
+    return view('raw_php');
+});
