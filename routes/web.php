@@ -134,3 +134,8 @@ Route::get('products', function () {
 
     return view('products', compact('products'));
 });
+
+Route::get('result/{marks}', function ($marks){
+
+    return view('print_result', compact('marks'));
+});
