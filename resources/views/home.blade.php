@@ -7,5 +7,7 @@
 </head>
 <body>
     <h1>Welcome to Laravel Practice Home</h1>
+
+    @include('me.info')
 </body>
 </html>
