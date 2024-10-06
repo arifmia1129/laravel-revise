@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -122,11 +123,14 @@ Route::get('getting-data', function () {
 
 Route::get('products', function () {
 
-    $products = [
-        'p1' => 'Product 1',
-        'p2' => 'Product 2',
-        'p3' => 'Product 3',
-    ];
 
-    return view('products', compact($products))->catch(10);
+    $products = Cache::remember('products', now()->addMinutes(10), function () {
+        return [
+            'p1' => 'Product 1',
+            'p2' => 'Product 2',
+            'p3' => 'Product 3',
+        ];
+    });
+
+    return view('products', compact('products'));
 });
