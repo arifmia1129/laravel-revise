@@ -148,3 +148,19 @@ Route::get('passport-status/{status}', function ($status){
 Route::get('raw-php', function () {
     return view('raw_php');
 });
+
+
+Route::get('dashboard', function () {
+    return view('dashboard.app');
+});
+
+Route::get('dashboard/home', function () {
+    return view('dashboard.home');
+});
+
+Route::get('dashboard/users', function () {
+    return view('dashboard.users');
+});
+
+Route::get('dashboard/products', function () {
+    return view('dashboard.products');});
