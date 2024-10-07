@@ -8,6 +8,10 @@
 <body>
     <h1>Welcome to Laravel Practice Home</h1>
 
+    {{-- 
+    # I am learning the laravel again
+    --}}
+
     @include('me.info')
 </body>
 </html>
