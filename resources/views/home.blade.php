@@ -11,7 +11,8 @@
     {{-- 
     # I am learning the laravel again
     --}}
-
     @include('me.info')
+
+    <p>My name is {{$name}}</p>
 </body>
 </html>
