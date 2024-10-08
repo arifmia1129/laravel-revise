@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\BloodDonorController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TeacherController;
 use Illuminate\Support\Facades\Cache;
@@ -173,3 +174,10 @@ Route::get('dashboard/users', function () {
 
 Route::get('dashboard/products', function () {
     return view('dashboard.products');});
+
+
+Route::get('blood-donor', [BloodDonorController::class, 'index']);
+
+Route::get('blood-donor/create', [BloodDonorController::class, 'create']);
+
+Route::post('blood-donor/store', [BloodDonorController::class, 'store'])->name('blood-donor-store');
