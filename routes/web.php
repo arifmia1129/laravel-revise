@@ -1,10 +1,15 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TeacherController;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class,'index']);
+
+
+Route::resource('teachers', TeacherController::class);
+
 
 Route::get('/{Arif}', [HomeController::class,'info']);
 
@@ -75,7 +80,7 @@ Route::permanentRedirect('welcome', 'getting');
 Route::view('institute', 'vtti', ['institute_name' => 'VTTI']);
 
 
-Route::resource('articles', 'ArticleController');
+// Route::resource('articles', 'ArticleController');
 
 // Route::get('articles', [ArticleController.class, 'index'])->name('articles.index');
 // Route::get('articles/create', [ArticleController.class, 'create'])->name('articles.create');
