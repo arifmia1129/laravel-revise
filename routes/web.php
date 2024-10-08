@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TeacherController;
 use Illuminate\Support\Facades\Cache;
@@ -9,6 +10,8 @@ Route::get('/', [HomeController::class,'index']);
 
 
 Route::resource('teachers', TeacherController::class);
+
+Route::get('/blog', BlogController::class);
 
 
 Route::get('/{Arif}', [HomeController::class,'info']);
