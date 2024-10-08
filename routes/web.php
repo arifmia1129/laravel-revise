@@ -181,3 +181,22 @@ Route::get('blood-donor', [BloodDonorController::class, 'index']);
 Route::get('blood-donor/create', [BloodDonorController::class, 'create']);
 
 Route::post('blood-donor/store', [BloodDonorController::class, 'store'])->name('blood-donor-store');
+
+
+Route::get('output/page', function (){
+    // return 'This is output page';
+    // return view('output');
+    // $data = [
+    //     'statusCode'=>201,
+    //     'success'=>true,
+    //     'message'=>'Successfully created a new blood donor',
+    //     'data'=>[
+    //         'name'=>'Md. Arif',
+    //         'email'=>'bqJZf@example.com',]
+    // ];
+
+    // return response()->json($data, 201);
+
+    return redirect('http://www.google.com');
+
+});

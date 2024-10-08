@@ -1,0 +1,1 @@
+<h1>This is output page</h1>
