@@ -4,6 +4,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\BloodDonorController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TeacherController;
+use App\Http\Middleware\RouteMiddleware;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Route;
 
@@ -15,7 +16,7 @@ Route::resource('teachers', TeacherController::class);
 Route::get('/blog', BlogController::class);
 
 
-Route::get('/{Arif}', [HomeController::class,'info']);
+// Route::get('/{Arif}', [HomeController::class,'info']);
 
 Route::get('/about/{name}/{email}', function ($name, $email) {
     return view('about', ["name" => $name, "email" => $email]);
@@ -200,3 +201,8 @@ Route::get('output/page', function (){
     return redirect('http://www.google.com');
 
 });
+
+
+Route::get('service', function (){
+    return 'This is service page';
+})->middleware(RouteMiddleware::class);
