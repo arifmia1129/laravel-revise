@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\BloodDonorController;
+use App\Http\Controllers\FamilyController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Middleware\RouteMiddleware;
@@ -206,3 +207,9 @@ Route::get('output/page', function (){
 Route::get('service', function (){
     return 'This is service page';
 })->middleware(RouteMiddleware::class);
+
+
+
+Route::get('family', [FamilyController::class, 'index']);
+
+Route::get('family/{id}', [FamilyController::class, 'show', ]);
