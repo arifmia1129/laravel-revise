@@ -210,6 +210,11 @@ Route::get('service', function (){
 
 
 
-Route::get('family', [FamilyController::class, 'index']);
+
+
+
+Route::group(['middleware'=>'new-middleware-group'], function () {
+    Route::get('family', [FamilyController::class, 'index']);
 
 Route::get('family/{id}', [FamilyController::class, 'show', ]);
+});
