@@ -6,6 +6,7 @@ use App\Http\Controllers\FamilyController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Middleware\RouteMiddleware;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Route;
 
@@ -217,4 +218,19 @@ Route::group(['middleware'=>'new-middleware-group'], function () {
     Route::get('family', [FamilyController::class, 'index']);
 
 Route::get('family/{id}', [FamilyController::class, 'show', ]);
+});
+
+
+Route::get('store-session-data', function (Request $request){
+    $request->session()->put('username', 'mdarifmia');
+    $request->session()->put('email', 'mdarifmia@gmail.com');
+
+    session([
+        'name'=>'Md Arif Mia',
+        'phone'=>'123-456-888'
+    ]);
+});
+
+Route::get('retrieve-session-data', function (){
+    dd(session()->all());
 });
