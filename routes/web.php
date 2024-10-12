@@ -252,3 +252,12 @@ Route::get('retrieve-session-data', function (Request $request){
         echo 'Phone number not found';
     }
 });
+
+
+Route::get('delete-session-data/{key}', function (Request $request, $key){
+    // $request->session()->forget($key);
+
+    $request->session()->flush();
+
+    dd(session()->all());
+});
