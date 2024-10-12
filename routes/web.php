@@ -4,6 +4,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\BloodDonorController;
 use App\Http\Controllers\FamilyController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SupportController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Middleware\RouteMiddleware;
 use Illuminate\Http\Request;
@@ -261,3 +262,5 @@ Route::get('delete-session-data/{key}', function (Request $request, $key){
 
     dd(session()->all());
 });
+
+Route::get('support', [SupportController::class, 'index']);
