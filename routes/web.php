@@ -225,12 +225,30 @@ Route::get('store-session-data', function (Request $request){
     $request->session()->put('username', 'mdarifmia');
     $request->session()->put('email', 'mdarifmia@gmail.com');
 
+    // $request->session()->flash('key', 'random_key_here');
+
     session([
         'name'=>'Md Arif Mia',
-        'phone'=>'123-456-888'
+        // 'phone'=>'123-456-888'
     ]);
 });
 
-Route::get('retrieve-session-data', function (){
+Route::get('retrieve-session-data', function (Request $request){
     dd(session()->all());
+
+    // echo session()->get('username');
+    // echo '<br>';
+    // echo session()->get('email');
+
+    echo session('username');
+    echo '<br>';
+    echo session('email');
+
+    echo '<br>';
+
+    if($request->session()->has('phone')) {
+        echo session('phone');
+    }else {
+        echo 'Phone number not found';
+    }
 });
