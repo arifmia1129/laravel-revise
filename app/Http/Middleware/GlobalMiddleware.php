@@ -17,10 +17,10 @@ class GlobalMiddleware
     {
         $current_year = date('Y');
 
-        if($current_year < 2020) {
-            echo 'Application is closing';
-            exit;
-        }
+        // if($current_year < 2020) {
+        //     echo 'Application is closing';
+        //     exit;
+        // }
 
         return $next($request);
     }

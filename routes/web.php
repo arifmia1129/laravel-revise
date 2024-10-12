@@ -264,3 +264,5 @@ Route::get('delete-session-data/{key}', function (Request $request, $key){
 });
 
 Route::get('support', [SupportController::class, 'index']);
+
+Route::post('store-support', [SupportController::class, 'store'])->name('store_support');

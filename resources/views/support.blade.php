@@ -18,7 +18,9 @@
 <body>
     <h1>We are always ready to help you</h1>
 
-    <div>
+    <form action="{{route('store_support')}}" method="POST">
+        @csrf
+        <div>
         <div class="input-container">
             <label for="name">Name</label>
             <input type="text" name="name"/>
@@ -36,6 +38,6 @@
             <textarea name="phone"> </textarea>
         </div>
         <button type="submit">Submit</button>
-    </div>
+    </div></form>
 </body>
 </html>
