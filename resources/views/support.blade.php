@@ -13,29 +13,49 @@
         .input-container {
             margin-bottom: 10px;
         }
+
+        .error-message {
+            color: red;
+            margin-top: 1px;
+            display: block;
+        }
+
+        .error-border {
+            border: 1px solid red;
+        }
     </style>
 </head>
 <body>
     <h1>We are always ready to help you</h1>
 
-    @if ($errors->any()) 
+    {{-- @if ($errors->any()) 
 
         @foreach ($errors->all() as $error) 
             <p>{{$error}}</p>
         @endforeach
         
-    @endif
+    @endif --}}
 
     <form action="{{route('store_support')}}" method="POST">
         @csrf
         <div>
         <div class="input-container">
             <label for="name">Name</label>
-            <input type="text" name="name" value="{{old("name")}}"/>
+            <input type="text" name="name" value="{{old("name")}}" class="@error('name')
+                error-border 
+            @enderror"/>
+            @error('name')
+            <small class='error-message'>{{$message}}</small>
+            @enderror
         </div>
         <div class="input-container">
             <label for="name">Email</label>
-            <input type="text" name="email" value="{{old("email")}}"/>
+            <input type="text" name="email" value="{{old("email")}}" class="@error('email')
+            error-border 
+        @enderror"/>
+            @error('email')
+            <small class='error-message'>{{$message}}</small>
+            @enderror
         </div>
         <div class="input-container">
             <label for="name">Phone</label>
@@ -43,7 +63,12 @@
         </div>
         <div class="input-container">
             <label for="name">Message</label>
-            <textarea name="message">{{old("messsage")}}</textarea>
+            <textarea name="message" class="@error('message')
+            error-border 
+        @enderror">{{old("messsage")}}</textarea>
+            @error('message')
+            <small class='error-message'>{{$message}}</small>
+            @enderror
         </div>
         <button type="submit">Submit</button>
     </div></form>
