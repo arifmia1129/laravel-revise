@@ -13,6 +13,13 @@ class SupportController extends Controller
 
     public function store (Request $request) {
         // dd($request->all());
+
+       $request->validate([
+        'name' => 'required',
+        'email'=> 'required',
+        'message' => 'required',
+       ]); 
+
       return  response()->json([
             'success'=>true,
             'data'=>$request->all()

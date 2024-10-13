@@ -18,6 +18,14 @@
 <body>
     <h1>We are always ready to help you</h1>
 
+    @if ($errors->any()) 
+
+        @foreach ($errors->all() as $error) 
+            <p>{{$error}}</p>
+        @endforeach
+        
+    @endif
+
     <form action="{{route('store_support')}}" method="POST">
         @csrf
         <div>
@@ -35,7 +43,7 @@
         </div>
         <div class="input-container">
             <label for="name">Message</label>
-            <textarea name="phone"> </textarea>
+            <textarea name="message"> </textarea>
         </div>
         <button type="submit">Submit</button>
     </div></form>
