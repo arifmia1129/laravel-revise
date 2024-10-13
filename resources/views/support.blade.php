@@ -40,6 +40,24 @@
         @csrf
         <div>
         <div class="input-container">
+            <label for="name">Serial</label>
+            <input type="text" name="serial" value="{{old("serial")}}" class="@error('serial')
+                error-border 
+            @enderror"/>
+            @error('serial')
+            <small class='error-message'>{{$message}}</small>
+            @enderror
+        </div>
+        <div class="input-container">
+            <label for="name">Date</label>
+            <input type="text" name="date" value="{{old("date")}}" class="@error('date')
+                error-border 
+            @enderror"/>
+            @error('date')
+            <small class='error-message'>{{$message}}</small>
+            @enderror
+        </div>
+        <div class="input-container">
             <label for="name">Name</label>
             <input type="text" name="name" value="{{old("name")}}" class="@error('name')
                 error-border 

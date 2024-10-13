@@ -15,9 +15,11 @@ class SupportController extends Controller
         // dd($request->all());
 
        $request->validate([
-        'name' => 'required',
-        'email'=> 'required',
+        'name' => 'required|string|min:3|max:20',
+        'email'=> 'required|email',
         'message' => 'required',
+        'serial'=>'required|numeric',
+        'date'=>'required|date'
        ]); 
 
       return  response()->json([
