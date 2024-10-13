@@ -31,19 +31,19 @@
         <div>
         <div class="input-container">
             <label for="name">Name</label>
-            <input type="text" name="name"/>
+            <input type="text" name="name" value="{{old("name")}}"/>
         </div>
         <div class="input-container">
             <label for="name">Email</label>
-            <input type="text" name="email"/>
+            <input type="text" name="email" value="{{old("email")}}"/>
         </div>
         <div class="input-container">
             <label for="name">Phone</label>
-            <input type="text" name="phone"/>
+            <input type="text" name="phone" value="{{old("phone")}}"/>
         </div>
         <div class="input-container">
             <label for="name">Message</label>
-            <textarea name="message"> </textarea>
+            <textarea name="message">{{old("messsage")}}</textarea>
         </div>
         <button type="submit">Submit</button>
     </div></form>
