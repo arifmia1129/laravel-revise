@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Validation\Rules\Password;
 
 class SupportController extends Controller
 {
@@ -17,7 +18,7 @@ class SupportController extends Controller
        $request->validate([
         'name' => 'required|string|min:3|max:20',
         'email'=> 'required|email',
-        'password'=> 'required',
+        'password'=> ['required', Password::min(8)->mixedCase() ],
         'confirm_password'=> ['required', 'same:password'],
         'message' => 'required',
         'serial'=>'required|numeric',
