@@ -15,7 +15,7 @@ class GlobalMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $current_year = date('Y');
+        // $current_year = date('Y');
 
         // if($current_year < 2020) {
         //     echo 'Application is closing';
