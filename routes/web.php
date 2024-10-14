@@ -5,6 +5,7 @@ use App\Http\Controllers\BloodDonorController;
 use App\Http\Controllers\FamilyController;
 use App\Http\Controllers\FileUploadController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\SupportController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Middleware\RouteMiddleware;
@@ -267,6 +268,10 @@ Route::get('delete-session-data/{key}', function (Request $request, $key){
 Route::get('support', [SupportController::class, 'index']);
 
 Route::post('store-support', [SupportController::class, 'store'])->name('store_support');
+
+Route::get('post', [PostController::class, 'index']);
+
+Route::post('store-post', [PostController::class, 'store'])->name('store_post');
 
 
 Route::get('file', [FileUploadController::class, 'index']);
