@@ -76,6 +76,24 @@
             @enderror
         </div>
         <div class="input-container">
+            <label for="name">Password</label>
+            <input type="password" name="password" class="@error('password')
+            error-border 
+        @enderror"/>
+            @error('password')
+            <small class='error-message'>{{$message}}</small>
+            @enderror
+        </div>
+        <div class="input-container">
+            <label for="name">Confirm Password</label>
+            <input type="password" name="confirm_password" class="@error('confirm_password')
+            error-border 
+        @enderror"/>
+            @error('confirm_password')
+            <small class='error-message'>{{$message}}</small>
+            @enderror
+        </div>
+        <div class="input-container">
             <label for="name">Phone</label>
             <input type="text" name="phone" value="{{old("phone")}}"/>
         </div>
