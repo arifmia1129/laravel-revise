@@ -8,6 +8,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\SupportController;
 use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\UploadController;
 use App\Http\Middleware\RouteMiddleware;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
@@ -277,3 +278,8 @@ Route::post('store-post', [PostController::class, 'store'])->name('store_post');
 Route::get('file', [FileUploadController::class, 'index']);
 
 Route::post('file-upload', [FileUploadController::class, 'upload'])->name('file_upload');
+
+
+Route::get('upload', [UploadController::class, 'index']);
+
+Route::post('upload-store', [UploadController::class,'store'])->name('upload_store');
