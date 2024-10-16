@@ -13,7 +13,11 @@ class UploadController extends Controller
     public function store (Request $request) {
         $file_name = 'new_file.'.$request->file->extension();
 
-        $request->file->move(public_path('uploads'),  $file_name);
+        // $request->file->move(public_path('uploads'),  $file_name);
+
+        // $request->file->store('uploads');
+
+        $request->file->storeAs('uploads', $file_name);
 
        return redirect()->back();
     }
