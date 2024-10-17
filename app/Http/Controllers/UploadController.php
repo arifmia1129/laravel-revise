@@ -46,8 +46,21 @@ class UploadController extends Controller
 
         // $image->greyscale();
         // $image->flip();
-        $image->brightness(10);
+        // $image->brightness(10);
 
-        $image->save(public_path('uploads/brightness_experiment_image.jpg'));
+        try {
+            $image->text('foo', 400, 50, function($font) {
+                $font->file(public_path('uploads/Roboto-Regular.ttf'));
+                $font->size(100);
+                $font->color('#fdf6e3');
+                $font->align('center');
+                $font->valign('top');
+                $font->angle(45);
+            });
+        } catch (\Exception $e) {
+            dd($e->getMessage());
+        }
+
+        $image->save(public_path('uploads/new_edited_experiment_image.jpg'));
     }
 }
