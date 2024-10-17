@@ -42,8 +42,12 @@ class UploadController extends Controller
 
         // $image->crop(200, 100);
 
-        $image->resize(200, 100);
+        // $image->resize(200, 100);
 
-        $image->save(public_path('uploads/resize_experiment_image.jpg'));
+        // $image->greyscale();
+        // $image->flip();
+        $image->brightness(10);
+
+        $image->save(public_path('uploads/brightness_experiment_image.jpg'));
     }
 }
