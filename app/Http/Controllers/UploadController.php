@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+
 use File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Laravel\Facades\Image;
+
 
 class UploadController extends Controller
 {
@@ -32,5 +35,15 @@ class UploadController extends Controller
         unlink(storage_path('app/public/uploads/new_file.png'));
 
        return redirect()->back();
+    }
+
+    public function experiment() {
+        $image = Image::read(public_path(('uploads/experiment_image.jpg')));
+
+        // $image->crop(200, 100);
+
+        $image->resize(200, 100);
+
+        $image->save(public_path('uploads/resize_experiment_image.jpg'));
     }
 }

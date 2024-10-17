@@ -285,3 +285,5 @@ Route::get('upload', [UploadController::class, 'index']);
 Route::post('upload-store', [UploadController::class,'store'])->name('upload_store');
 
 Route::get('delete-photo', [UploadController::class,'delete'])->name('delete_photo');
+
+Route::get('experiment-photo', [UploadController::class,'experiment'])->name('experiment');
