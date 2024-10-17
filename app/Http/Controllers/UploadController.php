@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use File;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class UploadController extends Controller
 {
@@ -18,6 +20,16 @@ class UploadController extends Controller
         // $request->file->store('uploads');
 
         $request->file->storeAs('uploads', $file_name);
+
+       return redirect()->back();
+    }
+
+    public function delete() {
+        // Storage::delete('uploads/new_file.png');
+
+        // File::delete(storage_path('app/public/uploads/new_file.png'));
+
+        unlink(storage_path('app/public/uploads/new_file.png'));
 
        return redirect()->back();
     }

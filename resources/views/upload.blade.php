@@ -3,6 +3,10 @@
     <img style="width:300px;" src="{{asset('storage/uploads/new_file.png')}}" alt="image">
 </div>
 
+<div>
+    <a href="{{route('delete_photo')}}">Delete</a>
+</div>
+
 <form action="{{route('upload_store')}}" method="post" enctype="multipart/form-data">
     @csrf
 <input type="file" name="file" >

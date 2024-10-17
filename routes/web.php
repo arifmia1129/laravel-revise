@@ -283,3 +283,5 @@ Route::post('file-upload', [FileUploadController::class, 'upload'])->name('file_
 Route::get('upload', [UploadController::class, 'index']);
 
 Route::post('upload-store', [UploadController::class,'store'])->name('upload_store');
+
+Route::get('delete-photo', [UploadController::class,'delete'])->name('delete_photo');
