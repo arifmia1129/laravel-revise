@@ -39,7 +39,7 @@ class UploadController extends Controller
 
     public function experiment() {
         $image = Image::read(public_path(('uploads/experiment_image.jpg')));
-
+        $image->filter(new CustomImageFilter());
         // $image->crop(200, 100);
 
         // $image->resize(200, 100);
@@ -48,19 +48,19 @@ class UploadController extends Controller
         // $image->flip();
         // $image->brightness(10);
 
-        try {
-            $image->text('foo', 400, 50, function($font) {
-                $font->file(public_path('uploads/Roboto-Regular.ttf'));
-                $font->size(100);
-                $font->color('#fdf6e3');
-                $font->align('center');
-                $font->valign('top');
-                $font->angle(45);
-            });
-        } catch (\Exception $e) {
-            dd($e->getMessage());
-        }
+        // try {
+        //     $image->text('foo', 400, 50, function($font) {
+        //         $font->file(public_path('uploads/Roboto-Regular.ttf'));
+        //         $font->size(100);
+        //         $font->color('#fdf6e3');
+        //         $font->align('center');
+        //         $font->valign('top');
+        //         $font->angle(45);
+        //     });
+        // } catch (\Exception $e) {
+        //     dd($e->getMessage());
+        // }
 
-        $image->save(public_path('uploads/new_edited_experiment_image.jpg'));
+        $image->save(public_path('uploads/custom_image.jpg'));
     }
 }
