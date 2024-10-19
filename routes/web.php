@@ -6,6 +6,7 @@ use App\Http\Controllers\FamilyController;
 use App\Http\Controllers\FileUploadController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\StudentController;
 use App\Http\Controllers\SupportController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\UploadController;
@@ -287,3 +288,6 @@ Route::post('upload-store', [UploadController::class,'store'])->name('upload_sto
 Route::get('delete-photo', [UploadController::class,'delete'])->name('delete_photo');
 
 Route::get('experiment-photo', [UploadController::class,'experiment'])->name('experiment');
+
+Route::get('create-student', [StudentController::class, 'index']);
+Route::get('show-student', [StudentController::class, 'show'])->name('show_student');
