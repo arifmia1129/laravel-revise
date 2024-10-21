@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Member;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -17,8 +18,12 @@ class DatabaseSeeder extends Seeder
     //     FanSeeder::class
     //    ]);
 
-       $this->call([
-        StudentSeeder::class
-       ]);
+    //    $this->call([
+    //     StudentSeeder::class
+    //    ]);
+
+    Member::factory(10)->create();
     }
+
+
 }
