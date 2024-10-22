@@ -5,6 +5,7 @@ use App\Http\Controllers\BloodDonorController;
 use App\Http\Controllers\FamilyController;
 use App\Http\Controllers\FileUploadController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PlayerController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\SupportController;
@@ -291,3 +292,12 @@ Route::get('experiment-photo', [UploadController::class,'experiment'])->name('ex
 
 Route::get('create-student', [StudentController::class, 'index']);
 Route::get('show-student', [StudentController::class, 'show'])->name('show_student');
+
+Route::get('player', [PlayerController::class, 'index'])->name('player.index');
+
+Route::get('player/create', [PlayerController::class, 'create']);
+
+Route::post('player/store', [PlayerController::class, 'store'])->name('player.store');
+Route::get('player/delete/{id}', [PlayerController::class, 'delete'])->name('player.delete');
+Route::get('player/restore/{id}', [PlayerController::class, 'restore'])->name('player.delete');
+Route::get('player/deleted', [PlayerController::class, 'deleted'])->name('player.delete');
