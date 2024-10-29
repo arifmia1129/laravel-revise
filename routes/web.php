@@ -301,3 +301,6 @@ Route::post('player/store', [PlayerController::class, 'store'])->name('player.st
 Route::get('player/delete/{id}', [PlayerController::class, 'delete'])->name('player.delete');
 Route::get('player/restore/{id}', [PlayerController::class, 'restore'])->name('player.delete');
 Route::get('player/deleted', [PlayerController::class, 'deleted'])->name('player.delete');
+
+
+Route::get('player/force-delete/{id}', [PlayerController::class, 'forceDelete'])->name('player.forceDelete');

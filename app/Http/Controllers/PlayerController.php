@@ -35,6 +35,13 @@ class PlayerController extends Controller
         return redirect()->route('player.index');
 
     }
+
+    public function forceDelete($id) {
+        Player::where('id', intval($id))->forceDelete();
+
+        return redirect()->route('player.index');
+    }
+
     public function restore($id) {
 
 
