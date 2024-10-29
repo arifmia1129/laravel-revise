@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Player;
+use DB;
 use Illuminate\Http\Request;
 
 class PlayerController extends Controller
@@ -64,6 +65,12 @@ class PlayerController extends Controller
         //     'success' => true,
         //    'message' => 'Player created successfully'
         // ]);
+
+        return redirect()->route('player.index');
+    }
+
+    public function storeWithRawQuery() {
+        DB::insert('insert into players (name, team) values (?, ?)', ['Arif', 'A']);
 
         return redirect()->route('player.index');
     }
