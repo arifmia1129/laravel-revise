@@ -27,6 +27,11 @@ class PlayerController extends Controller
 
     }
 
+    public function showByIdWithRawQuery($id) {
+        $player = DB::select('select * from players where id=?', [intval($id)]);
+        echo $player[0]->name;
+    }
+
     public function deleted() {
         $players = Player::onlyTrashed()->latest()->get();
 
