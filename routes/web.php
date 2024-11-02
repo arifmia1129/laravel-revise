@@ -307,3 +307,6 @@ Route::get('player/force-delete/{id}', [PlayerController::class, 'forceDelete'])
 
 
 Route::get('/player/store-with-raw-query', [PlayerController::class, 'storeWithRawQuery'])->name('player.storeWithRawQuery');
+
+
+Route::get('/player/show-with-query', [PlayerController::class, 'showAllWithRawQuery'])->name('player.showAllWithRawQuery');

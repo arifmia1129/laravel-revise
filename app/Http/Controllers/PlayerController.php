@@ -16,6 +16,17 @@ class PlayerController extends Controller
             echo '-------------<br>';
         }
     }
+
+    public function showAllWithRawQuery() {
+        $players = DB::select(('select * from players'));
+
+
+        foreach ($players as $player) {
+            echo $player->name.'-'.$player->team. '<br>';
+        }
+
+    }
+
     public function deleted() {
         $players = Player::onlyTrashed()->latest()->get();
 
