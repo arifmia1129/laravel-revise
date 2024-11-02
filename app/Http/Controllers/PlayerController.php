@@ -90,4 +90,9 @@ class PlayerController extends Controller
 
         return redirect()->route('player.index');
     }
+
+    public function updateWithRawQuery($id) {
+        DB::update('update players set name = ? where id = ?', ['Nazrul', $id]);
+
+    }
 }

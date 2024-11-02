@@ -312,3 +312,5 @@ Route::get('/player/store-with-raw-query', [PlayerController::class, 'storeWithR
 Route::get('/player/show-with-query', [PlayerController::class, 'showAllWithRawQuery'])->name('player.showAllWithRawQuery');
 
 Route::get('/player/show-with-query/{id}', [PlayerController::class, 'showByIdWithRawQuery'])->name('player.showByIdWithRawQuery');
+
+Route::get('/player/update-with-query/{id}', [PlayerController::class, 'updateWithRawQuery'])->name('player.updateWithRawQuery');
