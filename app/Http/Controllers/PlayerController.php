@@ -95,4 +95,13 @@ class PlayerController extends Controller
         DB::update('update players set name = ? where id = ?', ['Nazrul', $id]);
 
     }
+
+    public function deleteWithRawQuery($id) {
+        DB::delete('delete from players where id = ?',[$id]);
+
+        return response()->json([
+            'success'=>true,
+            'message'=>'Successfully delete the player by id'
+        ]);
+    }
 }

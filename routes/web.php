@@ -314,3 +314,5 @@ Route::get('/player/show-with-query', [PlayerController::class, 'showAllWithRawQ
 Route::get('/player/show-with-query/{id}', [PlayerController::class, 'showByIdWithRawQuery'])->name('player.showByIdWithRawQuery');
 
 Route::get('/player/update-with-query/{id}', [PlayerController::class, 'updateWithRawQuery'])->name('player.updateWithRawQuery');
+
+Route::get('/player/delete-with-query/{id}', [PlayerController::class, 'deleteWithRawQuery'])->name('player.deleteWithRawQuery');
