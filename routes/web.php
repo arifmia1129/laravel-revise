@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\BloodDonorController;
+use App\Http\Controllers\ChildrenController;
 use App\Http\Controllers\FamilyController;
 use App\Http\Controllers\FileUploadController;
 use App\Http\Controllers\HomeController;
@@ -316,3 +317,6 @@ Route::get('/player/show-with-query/{id}', [PlayerController::class, 'showByIdWi
 Route::get('/player/update-with-query/{id}', [PlayerController::class, 'updateWithRawQuery'])->name('player.updateWithRawQuery');
 
 Route::get('/player/delete-with-query/{id}', [PlayerController::class, 'deleteWithRawQuery'])->name('player.deleteWithRawQuery');
+
+
+Route::get('/children/create', [ChildrenController::class, 'create'])->name('children.create');
