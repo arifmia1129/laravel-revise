@@ -322,3 +322,4 @@ Route::get('/player/delete-with-query/{id}', [PlayerController::class, 'deleteWi
 Route::get('/children', [ChildrenController::class, 'index'])->name('children.index');
 Route::get('/children/create', [ChildrenController::class, 'create'])->name('children.create');
 Route::get('/children/update',[ChildrenController::class, 'update'])->name('children.update');
+Route::get('/children/delete', [ChildrenController::class, 'delete'])->name('children.delete');

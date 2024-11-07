@@ -55,4 +55,13 @@ class ChildrenController extends Controller
            'message'=> 'Successfully updated the child data'
         ]);
     }
+
+    public function delete () {
+        DB::table('childrens')->where('id', 1)->delete();
+
+        return response()->json([
+            'success'=> true,
+           'message'=> 'Successfully deleted the child data'
+        ]);
+    }
 }
