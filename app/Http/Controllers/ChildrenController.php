@@ -41,4 +41,18 @@ class ChildrenController extends Controller
            'message'=> 'Successfully added a new child'
         ]);
     }
+
+    public function update () {
+        $update_data = [
+            'name'=>'ARIBA BINTE ARIF',
+            'age'=> 4
+        ];
+
+        DB::table('childrens')->where('id', 1)->update($update_data);
+
+        return response()->json([
+            'success'=> true,
+           'message'=> 'Successfully updated the child data'
+        ]);
+    }
 }
