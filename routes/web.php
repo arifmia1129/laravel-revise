@@ -319,4 +319,5 @@ Route::get('/player/update-with-query/{id}', [PlayerController::class, 'updateWi
 Route::get('/player/delete-with-query/{id}', [PlayerController::class, 'deleteWithRawQuery'])->name('player.deleteWithRawQuery');
 
 
+Route::get('/children', [ChildrenController::class, 'index'])->name('children.index');
 Route::get('/children/create', [ChildrenController::class, 'create'])->name('children.create');
