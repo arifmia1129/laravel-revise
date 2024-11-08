@@ -6,6 +6,7 @@ use App\Http\Controllers\ChildrenController;
 use App\Http\Controllers\FamilyController;
 use App\Http\Controllers\FileUploadController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PersonController;
 use App\Http\Controllers\PlayerController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\StudentController;
@@ -325,3 +326,6 @@ Route::get('/children/update',[ChildrenController::class, 'update'])->name('chil
 Route::get('/children/delete', [ChildrenController::class, 'delete'])->name('children.delete');
 Route::get('/children/join', [ChildrenController::class, 'join'])->name('children.join');
 Route::get('/children/{id}', [ChildrenController::class, 'isExists'])->name('children.isExists');
+
+
+Route::get('/person', [PersonController::class, 'index'])->name('person.index');
