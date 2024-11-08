@@ -64,4 +64,14 @@ class ChildrenController extends Controller
            'message'=> 'Successfully deleted the child data'
         ]);
     }
+
+    public function join () {
+        $all_childrens = DB::table('childrens')->join('serial', 'childrens.id', '=', 'serial.children_id')->select('serial.*', 'childrens.name')->get();
+
+        return response()->json([
+            'success' => true,
+           'message'=>'Successfully retrieved all children and their corresponding serial numbers',
+            'data' => $all_childrens
+        ]);
+    }
 }

@@ -323,3 +323,4 @@ Route::get('/children', [ChildrenController::class, 'index'])->name('children.in
 Route::get('/children/create', [ChildrenController::class, 'create'])->name('children.create');
 Route::get('/children/update',[ChildrenController::class, 'update'])->name('children.update');
 Route::get('/children/delete', [ChildrenController::class, 'delete'])->name('children.delete');
+Route::get('/children/join', [ChildrenController::class, 'join'])->name('children.join');
