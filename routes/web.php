@@ -324,3 +324,4 @@ Route::get('/children/create', [ChildrenController::class, 'create'])->name('chi
 Route::get('/children/update',[ChildrenController::class, 'update'])->name('children.update');
 Route::get('/children/delete', [ChildrenController::class, 'delete'])->name('children.delete');
 Route::get('/children/join', [ChildrenController::class, 'join'])->name('children.join');
+Route::get('/children/{id}', [ChildrenController::class, 'isExists'])->name('children.isExists');

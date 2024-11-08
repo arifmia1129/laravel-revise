@@ -74,4 +74,23 @@ class ChildrenController extends Controller
             'data' => $all_childrens
         ]);
     }
+
+    public function isExists($id) {
+        $is_exists = DB::table('childrens')->where('id', $id)->exists();
+
+        if($is_exists) {
+            $data = DB::table('childrens')->where('id', $id)->first();
+
+            return response()->json([
+                'success' => true,
+               'message'=>'Successfully retrieved the child data',
+                'data' => $data
+            ]);
+        }else {
+            return response()->json([
+                'success' => false,
+               'message'=>'Child not found'
+            ]);
+        }
+    }
 }
