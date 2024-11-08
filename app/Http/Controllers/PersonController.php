@@ -45,7 +45,9 @@ class PersonController extends Controller
 
         // $all_person = DB::table('persons')->orderBy('name', 'asc')->get();
 
-        $all_person = DB::table('persons')->whereIn('id', [1,2,3])->get();
+        // $all_person = DB::table('persons')->whereIn('id', [1,2,3])->get();
+
+        $all_person = DB::table('persons')->whereNotIn('id',[1,2,3])->get();
 
         return response()->json(
             [
