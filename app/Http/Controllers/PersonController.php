@@ -34,12 +34,21 @@ class PersonController extends Controller
         // $all_group_by = DB::table('persons')->select('salary', DB::raw('COUNT(*) as total_count'), DB::raw('AVG(age) as average_age'), DB::raw('MAX(salary) as max_salary'))->groupBy('salary')->get();
 
 
-        $all_group_by = DB::table('persons')->select('salary', DB::raw('COUNT(*) as total_count'), DB::raw('AVG(age) as average_age'), DB::raw('MAX(salary) as max_salary'))->havingRaw('COUNT(*) > 1')->groupBy('salary')->get();
+        // $all_group_by = DB::table('persons')->select('salary', DB::raw('COUNT(*) as total_count'), DB::raw('AVG(age) as average_age'), DB::raw('MAX(salary) as max_salary'))->havingRaw('COUNT(*) > 1')->groupBy('salary')->get();
+
+        // return response()->json(
+        //     [
+        //        'success'=>true,
+        //        'message'=>'Successfully retrieved person information',
+        //         'data'=> $all_group_by]);
+
+
+        $all_person = DB::table('persons')->orderBy('name', 'asc')->get();
 
         return response()->json(
             [
                'success'=>true,
-               'message'=>'Successfully retrieved person information',
-                'data'=> $all_group_by]);
+               'message'=>'Successfully retrieved all persons',
+                'data'=> $all_person]);
     }
 }
