@@ -51,7 +51,11 @@ class PersonController extends Controller
 
 
         // $all_person = DB::table('persons')->whereBetween('id',[1,3])->get();
-        $all_person = DB::table('persons')->whereNotBetween('id',[1,3])->get();
+        // $all_person = DB::table('persons')->whereNotBetween('id',[1,3])->get();
+
+        $all_person = DB::table('persons')->whereIn('id', function ($query) {
+            $query->select('customer_id')->from('orders')->groupBy('customer_id');
+        })->get();
 
         return response()->json(
             [
