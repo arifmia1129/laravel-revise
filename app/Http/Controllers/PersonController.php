@@ -43,7 +43,9 @@ class PersonController extends Controller
         //         'data'=> $all_group_by]);
 
 
-        $all_person = DB::table('persons')->orderBy('name', 'asc')->get();
+        // $all_person = DB::table('persons')->orderBy('name', 'asc')->get();
+
+        $all_person = DB::table('persons')->whereIn('id', [1,2,3])->get();
 
         return response()->json(
             [
