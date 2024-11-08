@@ -29,7 +29,9 @@ class PersonController extends Controller
         //     ]
         // );
 
-        $all_group_by = DB::table('persons')->select('salary', DB::raw('COUNT(*) as total_count'))->groupBy('salary')->get();
+        // $all_group_by = DB::table('persons')->select('salary', DB::raw('COUNT(*) as total_count'))->groupBy('salary')->get();
+
+        $all_group_by = DB::table('persons')->select('salary', DB::raw('COUNT(*) as total_count'), DB::raw('AVG(age) as average_age'), DB::raw('MAX(salary) as max_salary'))->groupBy('salary')->get();
 
         return response()->json(
             [
