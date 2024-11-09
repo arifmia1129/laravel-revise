@@ -43,4 +43,22 @@ class DoctorController extends Controller
             'data'=> $doctor
         ]);
     }
+
+
+    public function update(){
+        $doctor = Doctor::find(3);
+
+        $doctor->name = 'Saikat';
+        $doctor->specialization = 'Surgeon';
+        $doctor->phone = '456-789-0123';
+        $doctor->email = 'saikat@hospital.com';
+
+        $doctor->save();
+
+        return response()->json([
+           'success'=> true,
+           'statusCode'=>200,
+           'message'=>'Doctor updated successfully',
+           'data'=> $doctor]);
+    }
 }

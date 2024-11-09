@@ -334,3 +334,4 @@ Route::get('/person', [PersonController::class, 'index'])->name('person.index');
 
 Route::get('/doctor/create', [DoctorController::class, 'create'])->name('doctor.create');
 Route::get('/doctor', [DoctorController::class, 'show'])->name('doctor.show');
+Route::get('/doctor/update', [DoctorController::class, 'update'])->name('doctor.update');
