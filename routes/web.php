@@ -3,6 +3,7 @@
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\BloodDonorController;
 use App\Http\Controllers\ChildrenController;
+use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\FamilyController;
 use App\Http\Controllers\FileUploadController;
 use App\Http\Controllers\HomeController;
@@ -329,3 +330,6 @@ Route::get('/children/{id}', [ChildrenController::class, 'isExists'])->name('chi
 
 
 Route::get('/person', [PersonController::class, 'index'])->name('person.index');
+
+
+Route::get('/doctor/create', [DoctorController::class, 'create'])->name('doctor.create');
