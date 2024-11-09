@@ -24,4 +24,23 @@ class DoctorController extends Controller
             'data'=>$doctor
         ]);
     }
+
+    public function show() {
+        // $doctors = Doctor::get();
+
+        // $doctors = Doctor::all();
+
+        // $doctors = Doctor::orderBy('name', 'asc')->get();
+
+        // $doctors = Doctor::where('name', '=', 'Robin')->first();
+
+        $doctor = Doctor::find(3);
+
+        return response()->json([
+            'success'=> true,
+            'statusCode'=>200,
+            'message'=>'Doctor retrieved successfully',
+            'data'=> $doctor
+        ]);
+    }
 }
