@@ -61,4 +61,23 @@ class DoctorController extends Controller
            'message'=>'Doctor updated successfully',
            'data'=> $doctor]);
     }
+
+
+    public function delete() {
+        $doctor = Doctor::find(3);
+
+        if(!$doctor){
+            return response()->json([
+               'success'=> false,
+               'statusCode'=>404,
+               'message'=>'Doctor not found']);  
+        }
+
+        $doctor->delete();
+
+        return response()->json([
+           'success'=> true,
+           'statusCode'=>200,
+           'message'=>'Doctor deleted successfully',]);
+    }
 }
