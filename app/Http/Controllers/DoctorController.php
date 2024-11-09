@@ -95,4 +95,34 @@ class DoctorController extends Controller
            'message'=>'Doctors created successfully',
            'data'=> $new_doctor]);
     }
+
+    public function index() {
+        // $doctor = Doctor::firstOrCreate(['name' => 'Brent',
+        //    'specialization' => 'Dentist',
+        //    'phone' => '789-456-1234',
+        //    'email' => 'brent@hospital.com']);
+
+        // return response()->json([
+        //    'success'=> true,
+        //    'statusCode'=>200,
+        //    'message'=>'Doctor retrieved or created successfully',
+        //    'data'=> $doctor]);
+
+
+        $doctor = Doctor::firstOrNew(['email'=> 'john100@hospital.com']);
+
+        $doctor->name = 'John';
+        $doctor->specialization = 'Dentist';
+        $doctor->phone = '789-456-1234';
+        $doctor->email = 'john@hospital.com';
+
+        $doctor->save();
+
+        return response()->json([
+           'success'=> true,
+           'statusCode'=>200,
+           'message'=>'Doctor retrieved or created successfully', 'data'=>$doctor]);
+          
+
+    }
 }
