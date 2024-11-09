@@ -109,19 +109,24 @@ class DoctorController extends Controller
         //    'data'=> $doctor]);
 
 
-        $doctor = Doctor::firstOrNew(['email'=> 'john100@hospital.com']);
+        // $doctor = Doctor::firstOrNew(['email'=> 'john100@hospital.com']);
 
-        $doctor->name = 'John';
-        $doctor->specialization = 'Dentist';
-        $doctor->phone = '789-456-1234';
-        $doctor->email = 'john@hospital.com';
+        // $doctor->name = 'John';
+        // $doctor->specialization = 'Dentist';
+        // $doctor->phone = '789-456-1234';
+        // $doctor->email = 'john@hospital.com';
 
-        $doctor->save();
+        // $doctor->save();
 
-        return response()->json([
-           'success'=> true,
-           'statusCode'=>200,
-           'message'=>'Doctor retrieved or created successfully', 'data'=>$doctor]);
+        // return response()->json([
+        //    'success'=> true,
+        //    'statusCode'=>200,
+        //    'message'=>'Doctor retrieved or created successfully', 'data'=>$doctor]);
+
+
+         Doctor::findOrFail(100);
+
+         echo 'My country name is Bangladesh';
           
 
     }
