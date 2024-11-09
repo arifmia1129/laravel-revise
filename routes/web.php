@@ -336,3 +336,4 @@ Route::get('/doctor/create', [DoctorController::class, 'create'])->name('doctor.
 Route::get('/doctor', [DoctorController::class, 'show'])->name('doctor.show');
 Route::get('/doctor/update', [DoctorController::class, 'update'])->name('doctor.update');
 Route::get('/doctor/delete', [DoctorController::class, 'delete'])->name('doctor.delete');
+Route::get('/doctor/mass', [DoctorController::class, 'mass'])->name('doctor.mass');

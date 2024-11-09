@@ -80,4 +80,19 @@ class DoctorController extends Controller
            'statusCode'=>200,
            'message'=>'Doctor deleted successfully',]);
     }
+
+    public function mass (){
+        $new_doctor = Doctor::create([
+            'name' => 'John',
+           'specialization' => 'Dentist',
+           'phone' => '789-456-1234',
+           'email' => 'john@hospital.com'
+        ]);
+
+        return response()->json([
+           'success'=> true,
+           'statusCode'=>201,
+           'message'=>'Doctors created successfully',
+           'data'=> $new_doctor]);
+    }
 }
