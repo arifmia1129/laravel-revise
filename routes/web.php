@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BabyController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\BloodDonorController;
 use App\Http\Controllers\ChildrenController;
@@ -338,3 +339,5 @@ Route::get('/doctor/update', [DoctorController::class, 'update'])->name('doctor.
 Route::get('/doctor/delete', [DoctorController::class, 'delete'])->name('doctor.delete');
 Route::get('/doctor/mass', [DoctorController::class, 'mass'])->name('doctor.mass');
 Route::get('/doctor/index', [DoctorController::class, 'index'])->name('doctor.index');
+
+Route::get('/baby', [BabyController::class, 'index'])->name('baby.index');
