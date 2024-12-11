@@ -6,6 +6,7 @@ use App\Http\Controllers\BloodDonorController;
 use App\Http\Controllers\ChildrenController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\DoctorController;
+use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\FamilyController;
 use App\Http\Controllers\FileUploadController;
 use App\Http\Controllers\HomeController;
@@ -344,3 +345,5 @@ Route::get('/doctor/index', [DoctorController::class, 'index'])->name('doctor.in
 Route::get('/baby', [BabyController::class, 'index'])->name('baby.index');
 
 Route::get('/department',[DepartmentController::class, 'index'])->name('department.index');;
+
+Route::get('/employee', [EmployeeController::class, 'index'])->name('employee.index');
